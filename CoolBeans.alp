@@ -99,6 +99,21 @@
 			<DefaultGround>1491524740665</DefaultGround>
 			<ConnectionsId>1491523933780</ConnectionsId>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1492988589202</Id>
+					<Name><![CDATA[vDrinksSold]]></Name>
+					<X>440</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1492979460068</Id>
 					<Name><![CDATA[pGetDrink]]></Name>
@@ -2166,112 +2181,8 @@ pLeave=0.2;]]></Action>
 			</Events>
 			<Schedules>
 				<Schedule>
-					<Id>1491774343190</Id>
-					<Name><![CDATA[Woman_Schedule]]></Name>
-					<X>720</X><Y>100</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ValueType>double_</ValueType>
-					<UnitType><![CDATA[RATE]]></UnitType>
-					<UnitOfValue Class="RateUnits"><![CDATA[PER_MINUTE]]></UnitOfValue>
-					<DefaultValue>0.0</DefaultValue>
-					<RepresentationMode>intervals</RepresentationMode>
-					<IntervalsDefinition>listOfRangesWithPriority</IntervalsDefinition>
-					<RepresentationType>calendar</RepresentationType>
-					<FirstDayOfWeek>sunday</FirstDayOfWeek>
-					<TimeUnitsInterval>hours</TimeUnitsInterval>
-					<RepeatTime>604800000</RepeatTime>
-					<RepeatTimeInterval>weeks</RepeatTimeInterval>
-					<IsSnapTo>false</IsSnapTo>
-					<SnapTo>1491773381788</SnapTo>
-					<SnapToTimeUnits>minutes</SnapToTimeUnits>
-					<AllDayExceptionMode>false</AllDayExceptionMode>
-					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
-					<IntervalsQuery>
-						<TableReference>
-						</TableReference>
-							<StartColumnReference>
-							</StartColumnReference>
-							<EndColumnReference>
-							</EndColumnReference>
-							<ValueColumnReference>
-							</ValueColumnReference>
-					</IntervalsQuery>
-					<Intervals>
-						<Interval>
-							<Start>43200000</Start>
-							<End>64800000</End>
-							<Value>0.1</Value>
-						</Interval>
-						<Interval>
-							<Start>64800000</Start>
-							<End>97200000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>129600000</Start>
-							<End>151200000</End>
-							<Value>0.1</Value>
-						</Interval>
-						<Interval>
-							<Start>151200000</Start>
-							<End>183600000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>216000000</Start>
-							<End>237600000</End>
-							<Value>0.1</Value>
-						</Interval>
-						<Interval>
-							<Start>237600000</Start>
-							<End>270000000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>302400000</Start>
-							<End>324000000</End>
-							<Value>0.1</Value>
-						</Interval>
-						<Interval>
-							<Start>324000000</Start>
-							<End>356400000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>388800000</Start>
-							<End>410400000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>410400000</Start>
-							<End>442800000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>475200000</Start>
-							<End>496800000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>496800000</Start>
-							<End>442800000</End>
-							<Value>0.2</Value>
-						</Interval>
-						<Interval>
-							<Start>561600000</Start>
-							<End>0</End>
-							<Value>0.1</Value>
-						</Interval>
-					</Intervals>
-					<Exceptions>
-					</Exceptions>
-				</Schedule>
-				<Schedule>
 					<Id>1492971999453</Id>
-					<Name><![CDATA[Man_Schedule1]]></Name>
+					<Name><![CDATA[schedule]]></Name>
 					<X>720</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2427,7 +2338,7 @@ pLeave=0.2;]]></Action>
 						<Parameter>
 							<Name><![CDATA[rateSchedule]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[Man_Schedule1]]></Code>
+								<Code><![CDATA[schedule]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2476,12 +2387,12 @@ pLeave=0.2;]]></Action>
 								<EntityEmbeddedObject>
 									<ActiveObjectClass>
 										<PackageName><![CDATA[coolbeans]]></PackageName>
-										<ClassName><![CDATA[Customer_Man]]></ClassName>
+										<ClassName><![CDATA[Customer]]></ClassName>
 									</ActiveObjectClass>
 									<GenericParameterSubstitute>
 										<GenericParameterSubstituteReference>
 											<PackageName><![CDATA[coolbeans]]></PackageName>
-											<ClassName><![CDATA[Customer_Man]]></ClassName>
+											<ClassName><![CDATA[Customer]]></ClassName>
 											<ItemName><![CDATA[1491524359167]]></ItemName>
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
@@ -5266,6 +5177,9 @@ pLeave=0.2;]]></Action>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[vDrinksSold+=triangular(1,2,3)]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -8941,6 +8855,9 @@ pLeave=0.2;]]></Action>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[vDrinksSold+=triangular(1,2,3)]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -14160,37 +14077,6 @@ pLeave=0.2;]]></Action>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 				</Path>
-				<Path SourceId="1491525757961" TargetId="1491525110088">
-					<Id>1491775324281</Id>
-					<Name><![CDATA[path9]]></Name>
-					<X>400</X><Y>440</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>false</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LineColor>-14774017</LineColor>
-					<LineMaterial>null</LineMaterial>
-					<LineWidth>2</LineWidth>
-					<PathType>dashedLine</PathType>
-					
-					<Width Class="UnitValue">
-						<Value Class="Double">
-							1
-						</Value>
-						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-					</Width>
-					<Points>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>20</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-5</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					</Points>
-					<Bidirectional>true</Bidirectional>
-				</Path>
 				<Path SourceId="1492967322335" TargetId="1491524937024">
 					<Id>1492967238045</Id>
 					<Name><![CDATA[path14]]></Name>
@@ -14325,6 +14211,40 @@ pLeave=0.2;]]></Action>
 					<Height>30</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
+				<Path SourceId="1491525757961" TargetId="1491525110088">
+					<Id>1492988327868</Id>
+					<Name><![CDATA[path9]]></Name>
+					<X>400</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>false</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-14774017</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineWidth>2</LineWidth>
+					<PathType>dashedLine</PathType>
+					
+					<Width Class="UnitValue">
+						<Value Class="Double">
+							1
+						</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</Width>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>90</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>65</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>107.678</X><Y>17.678</Y><Z>0</Z></Point>
+						<Point><X>100</X><Y>10</Y><Z>0</Z></Point>
+						<Point><X>82.322</X><Y>-7.678</Y><Z>0</Z></Point>
+						<Point><X>70</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Bidirectional>true</Bidirectional>
+				</Path>
 			</Shapes>
 
 					<Z>0</Z>
@@ -15810,7 +15730,7 @@ pLeave=0.2;]]></Action>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
 			<Id>1491524359168</Id>
-			<Name><![CDATA[Customer_Man]]></Name>
+			<Name><![CDATA[Customer]]></Name>
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
 			<IconTopGroupPersistent>true</IconTopGroupPersistent>
@@ -15892,6 +15812,23 @@ pLeave=0.2;]]></Action>
 				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 			</ScaleRuler>
 			<ConnectionsId>1491524359164</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1492987857019</Id>
+					<Name><![CDATA[vIs_Male]]></Name>
+					<X>60</X><Y>70</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[(Math.random() < 0.5)]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+			</Variables>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1491524359164</Id>
@@ -15979,6 +15916,56 @@ pLeave=0.2;]]></Action>
 					<Rotation>0.0</Rotation>
 					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
+					<VisibleCode><![CDATA[vIs_Male]]></VisibleCode>
+				</Figure3D>
+				<Figure3D>
+					<Id>1492988046125</Id>
+					<Name><![CDATA[woman_2]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<FileName><![CDATA[x3d/woman_2.x3d]]></FileName>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_009]]></Name>
+							<OriginalColor>-16777216</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Shape_006]]></Name>
+							<OriginalColor>-3367560</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_B18]]></Name>
+							<OriginalColor>-10078168</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Shape_003]]></Name>
+							<OriginalColor>-3355444</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Shape_11]]></Name>
+							<OriginalColor>-16777216</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Shape_12]]></Name>
+							<OriginalColor>-2148</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_A03]]></Name>
+							<OriginalColor>-39836</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.0</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<VisibleCode><![CDATA[!vIs_Male]]></VisibleCode>
 				</Figure3D>
 			</Shapes>
 
@@ -18722,12 +18709,12 @@ pLeave=0.2;]]></Action>
 								<EntityEmbeddedObject>
 									<ActiveObjectClass>
 										<PackageName><![CDATA[coolbeans]]></PackageName>
-										<ClassName><![CDATA[Customer_Man]]></ClassName>
+										<ClassName><![CDATA[Customer]]></ClassName>
 									</ActiveObjectClass>
 									<GenericParameterSubstitute>
 										<GenericParameterSubstituteReference>
 											<PackageName><![CDATA[coolbeans]]></PackageName>
-											<ClassName><![CDATA[Customer_Man]]></ClassName>
+											<ClassName><![CDATA[Customer]]></ClassName>
 											<ItemName><![CDATA[1491524359167]]></ItemName>
 										</GenericParameterSubstituteReference>
 									</GenericParameterSubstitute>
