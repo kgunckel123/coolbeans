@@ -25,19 +25,24 @@ public class test_functions {
     public int Sweet_Water_Sold = 0;
 
     public double total_profit = 0;
+    public double vDrinksSold = 0;
 
     // call this everytime a drink is sold
     public static void add_drink() {
+
         double randnum = Math.random();
         int quantity = triangular(1,2,3);
+
+        vDrinksSold += quantity;
+
         if (randnum < Budweiser_Probability){
-            Budweiser_Sold++;
+            Budweiser_Sold += quantity;
             add_to_profit(0, quantity)
         } else if (randnum > (1 - Vodka_Cranberry_Probability)) {
-            Vodka_Cranberry_Sold++;
+            Vodka_Cranberry_Sold += quantity;
             add_to_profit(1, quantity)
         } else {
-            Sweet_Water_Sold++;
+            Sweet_Water_Sold += quantity;
             add_to_profit(2, quantity)
         }
 
@@ -98,5 +103,8 @@ public class test_functions {
         return 2 - percent_change
 
     }
+
+    // No-op just to make the compiler happy
+    public static double triangular(a,b,c)
 
 }
