@@ -63,10 +63,27 @@ public class test_functions {
 
     // Called at Beginning of Run
     public static void set_probabilites_based_on_prices() {
-        double bw_price_diff = Budweiser_Price - Budweiser_Base_Price;
-        double vc_price_diff = Vodka_Cranberry_Price - Vodka_Cranberry_Base_Price;
-        double sw_price_diff = Sweet_Water_Price - Sweet_Water_Base_Price;
+        double bw_price_diff_percent = (Budweiser_Price - Budweiser_Base_Price) / Budweiser_Base_Price;
+        double vc_price_diff_percent = (Vodka_Cranberry_Price - Vodka_Cranberry_Base_Price) / Vodka_Cranberry_Base_Price;
+        double sw_price_diff_percent = (Sweet_Water_Price - Sweet_Water_Base_Price) / Sweet_Water_Base_Price;
 
+        if (bw_price_diff_percent > 2) {bw_price_diff_percent = 2}
+        if (vc_price_diff_percent > 2) {vc_price_diff_percent = 2}
+        if (sw_price_diff_percent > 2) {sw_price_diff_percent = 2}
+
+        if (bw_price_diff_percent < 0) {bw_price_diff_percent = 0}
+        if (vc_price_diff_percent < 0) {vc_price_diff_percent = 0}
+        if (sw_price_diff_percent < 0) {sw_price_diff_percent = 0}
+
+        Budweiser_Probability *= (2 - bw_price_diff_percent);
+        Vodka_Cranberry_Probability *= (2 - vc_price_diff_percent);
+        Sweet_Water_Probability *= (2 - sw_price_diff_percent);
+
+        double new_total = Budweiser_Probability + Vodka_Cranberry_Probability + Sweet_Water_Probability;
+
+        Budweiser_Probability /= new_total;
+        Vodka_Cranberry_Probability /= new_total;
+        Sweet_Water_Probability /= new_total;
     }
 
     // Called on the schedule modifier
@@ -76,7 +93,7 @@ public class test_functions {
         double new_total = Budweiser_Price + Sweet_Water_Price + Vodka_Cranberry_Price;
         double percent_change = new_total / base_total;
 
-        if (percent_change > 2) {percent_change = 0}
+        if (percent_change > 2) {percent_change = 2}
 
         return 2 - percent_change
 
