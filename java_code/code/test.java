@@ -75,7 +75,10 @@ public class test_functions {
         double base_total = Budweiser_Base_Price + Sweet_Water_Base_Price + Vodka_Cranberry_Base_Price;
         double new_total = Budweiser_Price + Sweet_Water_Price + Vodka_Cranberry_Price;
         double percent_change = new_total / base_total;
-        return 1 - percent_change
+
+        if (percent_change > 2) {percent_change = 0}
+
+        return 2 - percent_change
 
     }
 
