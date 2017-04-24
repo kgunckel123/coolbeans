@@ -26,6 +26,9 @@ public class test_functions {
 
     public double total_profit = 0;
     public double vDrinksSold = 0;
+    public double vDrinksPerDay = 0;
+
+
 
     // call this everytime a drink is sold
     public static void add_drink() {
@@ -34,16 +37,17 @@ public class test_functions {
         int quantity = triangular(1,2,3);
 
         vDrinksSold += quantity;
+        vDrinksPerDay += quantity;
 
         if (randnum < Budweiser_Probability){
             Budweiser_Sold += quantity;
             add_to_profit(0, quantity)
         } else if (randnum > (1 - Vodka_Cranberry_Probability)) {
             Vodka_Cranberry_Sold += quantity;
-            add_to_profit(1, quantity)
+            add_to_profit(1, quantity);
         } else {
             Sweet_Water_Sold += quantity;
-            add_to_profit(2, quantity)
+            add_to_profit(2, quantity);
         }
 
     }
@@ -105,6 +109,8 @@ public class test_functions {
     }
 
     // No-op just to make the compiler happy
-    public static double triangular(a,b,c)
+    public static double triangular(a,b,c) {
+        return 0.0
+    }
 
 }
