@@ -54,7 +54,7 @@ public class test_functions {
                 dollars_to_add = (Vodka_Cranberry_Price - Vodka_Cranberry_COGS);
                 break;
             case 2;
-                this.dollars_to_add = (Sweet_Water_Price - Sweet_Water_COGS);
+                dollars_to_add = (Sweet_Water_Price - Sweet_Water_COGS);
                 break;
         }
         total_profit += dollars_to_add;
@@ -72,8 +72,8 @@ public class test_functions {
     // Called on the schedule modifier
     public static double get_customer_arrival_rate_modifier() {
 
-        double base_total = this.Budweiser_Base_Price + this.Sweet_Water_Base_Price + this.Vodka_Cranberry_Base_Price;
-        double new_total = this.Budweiser_Price + this.Sweet_Water_Price + this.Vodka_Cranberry_Price;
+        double base_total = Budweiser_Base_Price + Sweet_Water_Base_Price + Vodka_Cranberry_Base_Price;
+        double new_total = Budweiser_Price + Sweet_Water_Price + Vodka_Cranberry_Price;
         double percent_change = new_total / base_total;
         return 1 - percent_change
 
