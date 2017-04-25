@@ -80,9 +80,9 @@ public class test_functions {
         double vc_price_diff_percent = Vodka_Cranberry_Price / Vodka_Cranberry_Base_Price;
         double sw_price_diff_percent = Sweet_Water_Price / Sweet_Water_Base_Price;
 
-        if (bw_price_diff_percent > 2) {bw_price_diff_percent = 2}
-        if (vc_price_diff_percent > 2) {vc_price_diff_percent = 2}
-        if (sw_price_diff_percent > 2) {sw_price_diff_percent = 2}
+        if (bw_price_diff_percent > 2) {bw_price_diff_percent = 2;}
+        if (vc_price_diff_percent > 2) {vc_price_diff_percent = 2;}
+        if (sw_price_diff_percent > 2) {sw_price_diff_percent = 2;}
 
         Budweiser_Probability = (2 - bw_price_diff_percent) * base_prob;
         Vodka_Cranberry_Probability = (2 - vc_price_diff_percent) * base_prob;
